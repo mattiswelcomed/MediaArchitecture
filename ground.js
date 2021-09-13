@@ -45,6 +45,14 @@ client.on('interactionCreate', async interaction => {
                 {label: 'Down', value: 'down.txt'}, {label: 'Echoes', value: 'echoes.txt'}]
             };
 
+            album_names = 
+            {
+                "dev":"Devastator EP",
+                "wam":"We Are Monsters",
+                "an_one":"Anarchy",
+                "hurt":"Hurt"
+            }
+
             const row = new MessageActionRow()
             .addComponents(
                 new MessageSelectMenu()
@@ -53,12 +61,10 @@ client.on('interactionCreate', async interaction => {
                     .addOptions(Array.from(gb_works[interaction.options.data[0].value])),
             );
 
-            interaction.reply({content:"Select the song!", components:[row]});
+            interaction.reply({content:`Select a song from **${album_names[interaction.options.data[0].value]}**!`, components:[row]});
         }
     } else if (interaction.isSelectMenu())
     {
-        interaction.reply(`This part is still in the works! Thanks for your interest, ${interaction.member.toString()}!`);
-        /*
         s3 = new AWS.S3({
             apiVersion: '2006-03-01',
             accessKeyId: AWS_ACCESS_KEY,
@@ -67,14 +73,17 @@ client.on('interactionCreate', async interaction => {
         });
 
         object = s3.getObject({
-            Bucket:"ground-zero",
+            Bucket:"ground-zero-discord",
             Key: interaction.values[0]
         }, function(err, data) {
-            if (err) {console.log(`-----> Something went wrong.\n${err}`)}
-            else {
-                interaction.reply(data.Body.toString())
+            if (err) {
+                interaction.reply(`This part is still in the works! Thanks for your interest, ${interaction.member.toString()}!`);
+                console.log(`-----> Something went wrong.\n${err}`)
             }
-        }); */
+            else {
+                interaction.reply(`\`\`\`${interaction.values[0].split('_').join(' ').replace(".txt", "").toUpperCase()} BY GROUNDBREAKING\n\n${data.Body.toString()}\`\`\``)
+            }
+        });
     };
 });
 

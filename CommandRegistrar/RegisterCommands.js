@@ -4,10 +4,6 @@ const { Routes } = require('discord-api-types/v9');
 const { BOT_CLIENT_ID, GUILD_ID, BOT_TOKEN } = require('./config.json');
 
 const commands = [
-  new SlashCommandBuilder().setName("purge").setDescription("Purge a number of messages!").addIntegerOption(option => 
-    option.setName("amount").setDescription("How many messages should I delete?").setRequired(true)
-  ),
-
   new SlashCommandBuilder().setName("lyrics").setDescription("Get the lyrics from any Groundbreaking album!")
   .addStringOption(option=>
     option.setName('album').setDescription('Which album are you looking for?').setRequired(true)
