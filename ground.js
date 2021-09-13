@@ -1,5 +1,6 @@
-const {BOT_TOKEN} = require('./config.json');
+const {BOT_TOKEN, AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY} = require('./config.json');
 
+const AWS = require('aws-sdk');
 const { Client, Intents, MessageActionRow, MessageSelectMenu, Permissions} = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
 
@@ -57,6 +58,23 @@ client.on('interactionCreate', async interaction => {
     } else if (interaction.isSelectMenu())
     {
         interaction.reply(`This part is still in the works! Thanks for your interest, ${interaction.member.toString()}!`);
+        /*
+        s3 = new AWS.S3({
+            apiVersion: '2006-03-01',
+            accessKeyId: AWS_ACCESS_KEY,
+            secretAccessKey:AWS_SECRET_ACCESS_KEY
+        
+        });
+
+        object = s3.getObject({
+            Bucket:"ground-zero",
+            Key: interaction.values[0]
+        }, function(err, data) {
+            if (err) {console.log(`-----> Something went wrong.\n${err}`)}
+            else {
+                interaction.reply(data.Body.toString())
+            }
+        }); */
     };
 });
 
