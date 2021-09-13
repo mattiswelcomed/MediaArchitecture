@@ -1,0 +1,14 @@
+{
+  "name": "groundbot-beta",
+  "version": "0.0.0",
+  "description": "The official Ground Zero Discord bot!",
+  "main": "ground.js",
+  "scripts": {
+    "test": "node ground.js"
+  },
+  "author": "Matt",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  }
+}
