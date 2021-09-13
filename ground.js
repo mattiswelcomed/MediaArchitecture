@@ -1,7 +1,7 @@
 const {BOT_TOKEN, AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY} = require('./config.json');
 
 const AWS = require('aws-sdk');
-const { Client, Intents, MessageActionRow, MessageSelectMenu, Permissions} = require('discord.js');
+const { Client, Intents, MessageActionRow, MessageSelectMenu, MessageEmbed} = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
 
 const version = "1.0.0 BETA"
@@ -81,7 +81,47 @@ client.on('interactionCreate', async interaction => {
                 console.log(`-----> Something went wrong.\n${err}`)
             }
             else {
-                interaction.reply(`\`\`\`${interaction.values[0].split('_').join(' ').replace(".txt", "").toUpperCase()} BY GROUNDBREAKING\n\n${data.Body.toString()}\`\`\``)
+
+                color_chooser = 
+                {
+                    "We Are Monsters":{
+                        songs:["WE ARE MONSTERS", "ADRENALINE", "FANTASY", "NO I DONT", "MIRAGE", "CONTINUUM", "MY MACHINE", "HOUSE DIVINE", "PARTY RIOT", "BROKEN"],
+                        color:"#FFFFFF"
+                    },
+                    "Anarchy": {
+                        songs:["MEDIA STAR", "UNITED ALLIANCE OF JUSTICE AND PROSPERITY", "NEW CITY", "CODE RED", "ANARCHY", "BETRAYAL", "FIREWORKS", "NIGHTMARES", "SHELL", "AS WE FALL"],
+                        color:"#691312"
+                    },
+                    "Devastator EP": {
+                        songs:["FAKER", "SYNTHETIC", "BREATHE", "CRANK", "DEVASTATOR"],
+                        color:"#F20612"
+                    },
+                    "Hurt": {
+                        songs:["HURT", "OUTCAST", "STANDOFF", "REAL BOY", "NO MORE ME", "DESTINED", "SAVE ME", "BREAK ME", "GET LOW", "MECHANICAL", "NO CONTROL", "THE LIE", "DOWN", "ECHOES"],
+                        color:"#34202C"
+                    }
+                }
+
+                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt"]
+
+                song_all_caps = interaction.values[0].split('_').join(' ').replace(".txt", "").toUpperCase()
+
+                for (const album in albums) {
+                    const array = color_chooser[albums[album]].songs
+                    if (array.includes(song_all_caps)) {
+                        chosen_color = color_chooser[albums[album]].color
+                        break
+                    }
+                }
+
+                const LyricEmbed = new MessageEmbed()
+                    .setColor(chosen_color)
+                    .setTitle(`${song_all_caps} BY GROUNDBREAKING`)
+                    .setDescription(data.Body.toString())
+                    .setFooter(`requested by ${interaction.user.username}`, client.user.avatarURL());
+
+
+                interaction.reply({embeds:[LyricEmbed]})
             }
         });
     };
