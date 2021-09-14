@@ -82,7 +82,7 @@ client.on('interactionCreate', async interaction => {
                     {label: 'Important People', value: 'important_people.txt'},
                     {label: 'Big Ugly Missiles', value: 'big_ugly_missiles.txt'},
                     {label: 'War', value: 'war.txt'},
-                    {label: 'Victory', value: 'victory.txt'}]
+                    {label: 'Victory', value: 'victory.txt'},]
             };
 
             album_names = 
@@ -91,7 +91,7 @@ client.on('interactionCreate', async interaction => {
                 "wam":"We Are Monsters",
                 "an_one":"Anarchy",
                 "hurt":"Hurt",
-                "an_two":"Anarchy II"
+                "an_two":"Anarchy II",
             }
 
             const row = new MessageActionRow()
@@ -144,7 +144,7 @@ client.on('interactionCreate', async interaction => {
                     "Anarchy II":{
                         songs:["JUSTICE", "THE COMEBACK", "WE\'RE WATCHING", "VIP", "BEAUTIFUL PEOPLE", "REBELS", "EVER", "GHOST", "INDUSTRIAL ROBOT REVOLUTION", "IMPORTANT PEOPLE", "BIG UGLY MISSILES", "WAR", "VICTORY"],
                         color:"#691312"
-                    }
+                    },
                 }
 
                 albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II"]
