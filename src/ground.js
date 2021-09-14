@@ -82,7 +82,7 @@ client.on('interactionCreate', async interaction => {
                     {label: 'Important People', value: 'important_people.txt'},
                     {label: 'Big Ugly Missiles', value: 'big_ugly_missiles.txt'},
                     {label: 'War', value: 'war.txt'},
-                    {label: 'Victory', value: 'victory.txt'}],
+                    {label: 'Victory', value: 'victory.txt'}]
             };
 
             album_names = 
