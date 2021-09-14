@@ -27,22 +27,62 @@ client.on('interactionCreate', async interaction => {
             gb_works = 
             {
                 'dev':[
-                    {label: 'Faker', value: "faker.txt"}, {label:'Synthetic', value:"synthetic.txt"}, {label:'Breathe', value:"breathe.txt"}, {label: 'Crank', value:"crank.txt"}, {label: 'Devastator', value:"devastator.txt"}
-                ],
+                    {label: 'Faker', value: "faker.txt"},
+                    {label:'Synthetic', value:"synthetic.txt"},
+                    {label:'Breathe', value:"breathe.txt"},
+                    {label: 'Crank', value:"crank.txt"},
+                    {label: 'Devastator', value:"devastator.txt"}],
                 'wam':[
-                    {label: 'We Are Monsters', value: 'we_are_monsters.txt'}, {label: 'Adrenaline', value: 'adrenaline.txt'}, {label: 'Fantasy', value: 'fantasy.txt'},
-                    {label: 'No I Don\'t', value: 'no_i_dont.txt'}, {label: 'Mirage', value: 'mirage.txt'}, {label: 'Continuum', value: 'continuum.txt'},
-                    {label: 'My Machine', value: 'my_machine.txt'}, {label: 'House Divine', value: 'house_divine.txt'}, {label: 'Party Riot', value: 'party_riot.txt'},
+                    {label: 'We Are Monsters', value: 'we_are_monsters.txt'},
+                    {label: 'Adrenaline', value: 'adrenaline.txt'},
+                    {label: 'Fantasy', value: 'fantasy.txt'},
+                    {label: 'No I Don\'t', value: 'no_i_dont.txt'},
+                    {label: 'Mirage', value: 'mirage.txt'},
+                    {label: 'Continuum', value: 'continuum.txt'},
+                    {label: 'My Machine', value: 'my_machine.txt'},
+                    {label: 'House Divine', value: 'house_divine.txt'},
+                    {label: 'Party Riot', value: 'party_riot.txt'},
                     {label: 'Broken', value: 'broken.txt'}],
                 'an_one':[
-                    {label: 'Media Star', value: 'media_star.txt'}, {label: 'United Alliance of Justice and Prosperity', value: 'united_alliance_of_justice_and_prosperity.txt'}, {label: 'New City', value: 'new_city.txt'},
-                    {label: 'Code: Red', value: 'code_red.txt'}, {label: 'Anarchy', value: 'anarchy.txt'}, {label: 'Betrayal', value: 'betrayal.txt'},
-                    {label: 'Fireworks', value: 'fireworks.txt'}, {label: 'Nightmares', value: 'nightmares.txt'}, {label: 'Shell', value: 'shell.txt'},
+                    {label: 'Media Star', value: 'media_star.txt'},
+                    {label: 'United Alliance of Justice and Prosperity', value: 'united_alliance_of_justice_and_prosperity.txt'},
+                    {label: 'New City', value: 'new_city.txt'},
+                    {label: 'Code: Red', value: 'code_red.txt'},
+                    {label: 'Anarchy', value: 'anarchy.txt'},
+                    {label: 'Betrayal', value: 'betrayal.txt'},
+                    {label: 'Fireworks', value: 'fireworks.txt'},
+                    {label: 'Nightmares', value: 'nightmares.txt'},
+                    {label: 'Shell', value: 'shell.txt'},
                     {label: 'As We Fall', value: 'as_we_fall.txt'}],
-                'hurt':[{label: 'Hurt', value: 'hurt.txt'}, {label: 'Outcast', value: 'outcast.txt'}, {label: 'Standoff', value: 'standoff.txt'}, {label: 'Real Boy', value: 'real_boy.txt'},
-                {label: 'No More Me', value: 'no_more_me.txt'}, {label: 'Destined', value: 'destined.txt'}, {label: 'Save Me', value: 'save_me.txt'}, {label: 'Break Me', value: 'break_me.txt'},
-                {label: 'Get Low', value: 'get_low.txt'}, {label: 'Mechanical', value: 'mechanical.txt'}, {label: 'No Control', value: 'no_control.txt'}, {label: 'The Lie', value: 'the_lie.txt'},
-                {label: 'Down', value: 'down.txt'}, {label: 'Echoes', value: 'echoes.txt'}]
+                'hurt':[
+                    {label: 'Hurt', value: 'hurt.txt'},
+                    {label: 'Outcast', value: 'outcast.txt'},
+                    {label: 'Standoff', value: 'standoff.txt'},
+                    {label: 'Real Boy', value: 'real_boy.txt'},
+                    {label: 'No More Me', value: 'no_more_me.txt'},
+                    {label: 'Destined', value: 'destined.txt'},
+                    {label: 'Save Me', value: 'save_me.txt'},
+                    {label: 'Break Me', value: 'break_me.txt'},
+                    {label: 'Get Low', value: 'get_low.txt'},
+                    {label: 'Mechanical', value: 'mechanical.txt'},
+                    {label: 'No Control', value: 'no_control.txt'},
+                    {label: 'The Lie', value: 'the_lie.txt'},
+                    {label: 'Down', value: 'down.txt'},
+                    {label: 'Echoes', value: 'echoes.txt'}],
+                'an_two':[
+                    {label: 'Justice', value: 'justice.txt'},
+                    {label: 'The Comeback', value: 'the_comeback.txt'},
+                    {label: 'We\'re Watching', value: 'were_watching.txt'},
+                    {label: 'VIP', value: 'vip.txt'},
+                    {label: 'Beautiful People', value: 'beautiful_people.txt'},
+                    {label: 'Rebels', value: 'rebels.txt'},
+                    {label: 'Ever', value: 'ever.txt'},
+                    {label: 'Ghost', value: 'ghost.txt'},
+                    {label: 'Industrial Robot Revolution', value: 'industrial_robot_revolution.txt'},
+                    {label: 'Important People', value: 'important_people.txt'},
+                    {label: 'Big Ugly Missiles', value: 'big_ugly_missiles.txt'},
+                    {label: 'War', value: 'war.txt'},
+                    {label: 'Victory', value: 'victory.txt'}],
             };
 
             album_names = 
@@ -50,7 +90,8 @@ client.on('interactionCreate', async interaction => {
                 "dev":"Devastator EP",
                 "wam":"We Are Monsters",
                 "an_one":"Anarchy",
-                "hurt":"Hurt"
+                "hurt":"Hurt",
+                "an_two":"Anarchy II"
             }
 
             const row = new MessageActionRow()
@@ -99,10 +140,14 @@ client.on('interactionCreate', async interaction => {
                     "Hurt": {
                         songs:["HURT", "OUTCAST", "STANDOFF", "REAL BOY", "NO MORE ME", "DESTINED", "SAVE ME", "BREAK ME", "GET LOW", "MECHANICAL", "NO CONTROL", "THE LIE", "DOWN", "ECHOES"],
                         color:"#34202C"
+                    },
+                    "Anarchy II":{
+                        songs:["JUSTICE", "THE COMEBACK", "WE\'RE WATCHING", "VIP", "BEAUTIFUL PEOPLE", "REBELS", "EVER", "GHOST", "INDUSTRIAL ROBOT REVOLUTION", "IMPORTANT PEOPLE", "BIG UGLY MISSILES", "WAR", "VICTORY"],
+                        color:"#691312"
                     }
                 }
 
-                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt"]
+                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II"]
 
                 song_all_caps = interaction.values[0].split('_').join(' ').replace(".txt", "").toUpperCase()
 
