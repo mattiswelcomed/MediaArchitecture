@@ -26,13 +26,13 @@ client.on('interactionCreate', async interaction => {
         {
             gb_works = 
             {
-                'dev':[
+                'Devastator_EP':[
                     {label: 'Faker', value: "faker.txt"},
                     {label:'Synthetic', value:"synthetic.txt"},
                     {label:'Breathe', value:"breathe.txt"},
                     {label: 'Crank', value:"crank.txt"},
                     {label: 'Devastator', value:"devastator.txt"}],
-                'wam':[
+                'We_Are_Monsters':[
                     {label: 'We Are Monsters', value: 'we_are_monsters.txt'},
                     {label: 'Adrenaline', value: 'adrenaline.txt'},
                     {label: 'Fantasy', value: 'fantasy.txt'},
@@ -43,7 +43,7 @@ client.on('interactionCreate', async interaction => {
                     {label: 'House Divine', value: 'house_divine.txt'},
                     {label: 'Party Riot', value: 'party_riot.txt'},
                     {label: 'Broken', value: 'broken.txt'}],
-                'an_one':[
+                'Anarchy':[
                     {label: 'Media Star', value: 'media_star.txt'},
                     {label: 'United Alliance of Justice and Prosperity', value: 'united_alliance_of_justice_and_prosperity.txt'},
                     {label: 'New City', value: 'new_city.txt'},
@@ -54,7 +54,7 @@ client.on('interactionCreate', async interaction => {
                     {label: 'Nightmares', value: 'nightmares.txt'},
                     {label: 'Shell', value: 'shell.txt'},
                     {label: 'As We Fall', value: 'as_we_fall.txt'}],
-                'hurt':[
+                'Hurt':[
                     {label: 'Hurt', value: 'hurt.txt'},
                     {label: 'Outcast', value: 'outcast.txt'},
                     {label: 'Standoff', value: 'standoff.txt'},
@@ -69,7 +69,7 @@ client.on('interactionCreate', async interaction => {
                     {label: 'The Lie', value: 'the_lie.txt'},
                     {label: 'Down', value: 'down.txt'},
                     {label: 'Echoes', value: 'echoes.txt'}],
-                'an_two':[
+                'Anarchy_II':[
                     {label: 'Justice', value: 'justice.txt'},
                     {label: 'The Comeback', value: 'the_comeback.txt'},
                     {label: 'We\'re Watching', value: 'were_watching.txt'},
@@ -82,17 +82,8 @@ client.on('interactionCreate', async interaction => {
                     {label: 'Important People', value: 'important_people.txt'},
                     {label: 'Big Ugly Missiles', value: 'big_ugly_missiles.txt'},
                     {label: 'War', value: 'war.txt'},
-                    {label: 'Victory', value: 'victory.txt'},]
+                    {label: 'Victory', value: 'victory.txt'}]
             };
-
-            album_names = 
-            {
-                "dev":"Devastator EP",
-                "wam":"We Are Monsters",
-                "an_one":"Anarchy",
-                "hurt":"Hurt",
-                "an_two":"Anarchy II",
-            }
 
             const row = new MessageActionRow()
             .addComponents(
@@ -102,7 +93,7 @@ client.on('interactionCreate', async interaction => {
                     .addOptions(Array.from(gb_works[interaction.options.data[0].value])),
             );
 
-            interaction.reply({content:`Select a song from **${album_names[interaction.options.data[0].value]}**!`, components:[row]});
+            interaction.reply({content:`Select a song from **${[interaction.options.data[0].value.split('_').join(' ')]}**!`, components:[row]});
         }
     } else if (interaction.isSelectMenu())
     {
@@ -125,37 +116,25 @@ client.on('interactionCreate', async interaction => {
 
                 color_chooser = 
                 {
-                    "We Are Monsters":{
-                        songs:["WE ARE MONSTERS", "ADRENALINE", "FANTASY", "NO I DONT", "MIRAGE", "CONTINUUM", "MY MACHINE", "HOUSE DIVINE", "PARTY RIOT", "BROKEN"],
-                        color:"#FFFFFF"
-                    },
-                    "Anarchy": {
-                        songs:["MEDIA STAR", "UNITED ALLIANCE OF JUSTICE AND PROSPERITY", "NEW CITY", "CODE RED", "ANARCHY", "BETRAYAL", "FIREWORKS", "NIGHTMARES", "SHELL", "AS WE FALL"],
-                        color:"#691312"
-                    },
-                    "Devastator EP": {
-                        songs:["FAKER", "SYNTHETIC", "BREATHE", "CRANK", "DEVASTATOR"],
-                        color:"#F20612"
-                    },
-                    "Hurt": {
-                        songs:["HURT", "OUTCAST", "STANDOFF", "REAL BOY", "NO MORE ME", "DESTINED", "SAVE ME", "BREAK ME", "GET LOW", "MECHANICAL", "NO CONTROL", "THE LIE", "DOWN", "ECHOES"],
-                        color:"#34202C"
-                    },
-                    "Anarchy II":{
-                        songs:["JUSTICE", "THE COMEBACK", "WE\'RE WATCHING", "VIP", "BEAUTIFUL PEOPLE", "REBELS", "EVER", "GHOST", "INDUSTRIAL ROBOT REVOLUTION", "IMPORTANT PEOPLE", "BIG UGLY MISSILES", "WAR", "VICTORY"],
-                        color:"#691312"
-                    },
+                    "We Are Monsters":"#FFFFFF",
+                    "Anarchy": "#691312",
+                    "Devastator EP": "#F20612",
+                    "Hurt": "#34202C",
+                    "Anarchy II":"#691312"
                 }
 
                 albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II"]
 
+                /* FOR DEVELOPMENTAL PURPOSES
+                for (const album in albums) {if (interaction.message.content.includes(albums[album])) {request = `True, album is ${albums[album]}`}}
+                interaction.followUp(`Here's your request, ${interaction.member.toString()}:\n\`\`\`${request}\`\`\`\n**THIS IS FOR DEVELOPMENTAL PURPOSES. PLEASE REMOVE THIS IN PUBLICATION.**`)
+                */
+
                 song_all_caps = interaction.values[0].split('_').join(' ').replace(".txt", "").toUpperCase()
 
                 for (const album in albums) {
-                    const array = color_chooser[albums[album]].songs
-                    if (array.includes(song_all_caps)) {
-                        chosen_color = color_chooser[albums[album]].color
-                        break
+                    if (interaction.message.content.includes(albums[album])) {
+                        chosen_color = color_chooser[albums[album]]
                     }
                 }
 

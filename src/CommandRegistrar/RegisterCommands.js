@@ -7,7 +7,7 @@ const commands = [
   new SlashCommandBuilder().setName("lyrics").setDescription("Get the lyrics from any Groundbreaking album!")
   .addStringOption(option=>
     option.setName('album').setDescription('Which album are you looking for?').setRequired(true)
-    .addChoice("Devastator EP", "dev").addChoice("We Are Monsters", "wam").addChoice("Anarchy", "an_one").addChoice("Hurt", "hurt").addChoice("Anarchy II", "an_two"))
+    .addChoice("Devastator EP", "Devastator_EP").addChoice("We Are Monsters", "We_Are_Monsters").addChoice("Anarchy", "Anarchy").addChoice("Hurt", "Hurt").addChoice("Anarchy II", "Anarchy_II"))
 ].map(command => command.toJSON());
 
 const rest = new REST({ version: '9' }).setToken(BOT_TOKEN);
