@@ -118,7 +118,7 @@ client.on('interactionCreate', async interaction => {
         }, function(err, data) {
             if (err) {
                 interaction.reply(`Sorry, there's been an error. :pensive:`);
-                console.log(`-----> Something went wrong.\n${err}`)
+                console.log(`-----> Something went wrong.\n-----> ${err}`)
             }
             else {
 
