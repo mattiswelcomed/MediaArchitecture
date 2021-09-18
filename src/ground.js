@@ -82,7 +82,15 @@ client.on('interactionCreate', async interaction => {
                     {label: 'Important People', value: 'important_people.txt'},
                     {label: 'Big Ugly Missiles', value: 'big_ugly_missiles.txt'},
                     {label: 'War', value: 'war.txt'},
-                    {label: 'Victory', value: 'victory.txt'}]
+                    {label: 'Victory', value: 'victory.txt'}],
+                'Insert_Genre_Here':[
+                    {label: 'Anger', value: 'anger.txt'},
+                    {label: 'Stress', value: 'stress.txt'},
+                    {label: 'Anxiety', value: 'anxiety.txt'},
+                    {label: 'Insomnia', value: 'insomnia.txt'},
+                    {label: 'Depression', value: 'depression.txt'},
+                    {label: 'Insert Genre Here', value: 'insert_genre_here.txt'},
+                    {label: 'Chstr', value: 'chstr.txt'}]
             };
 
             const row = new MessageActionRow()
@@ -120,10 +128,11 @@ client.on('interactionCreate', async interaction => {
                     "Anarchy": "#691312",
                     "Devastator EP": "#F20612",
                     "Hurt": "#34202C",
-                    "Anarchy II":"#691312"
+                    "Anarchy II":"#691312",
+                    "Insert Genre Here":"#7C3F8C"
                 }
 
-                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II"]
+                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II", "Insert Genre Here"]
 
                 /* FOR DEVELOPMENTAL PURPOSES
                 for (const album in albums) {if (interaction.message.content.includes(albums[album])) {request = `True, album is ${albums[album]}`}}
