@@ -42,3 +42,13 @@ All this does is print the files you need to shorten.
 
 ### Files.Clear()
 Deletes the files you have in the `/Files` folder.
+
+# Other Things to Do
+* In `Media.js`, add the dictionary to `gb_works` that you got from `Files.Labels_and_Values()`.
+* Once you fill out the .txt files you got from `Files.Create_Files()`, give them to a mod to upload to Amazon Web Services.
+* In `Media.js`, add the album you're working on to `color_chooser` and add a color that represents the album.
+* In `Media.js`, add the album name to the `albums` array
+* In `/CommandRegistrar/RegisterCommands.js`, add `.AddChoice("Album Name", "Album_Name_With_UnderScores")` to the file.
+
+# Thank You
+Thank you for your interest in contributing! <3
