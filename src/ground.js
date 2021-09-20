@@ -90,7 +90,20 @@ client.on('interactionCreate', async interaction => {
                     {label: 'Insomnia', value: 'insomnia.txt'},
                     {label: 'Depression', value: 'depression.txt'},
                     {label: 'Insert Genre Here', value: 'insert_genre_here.txt'},
-                    {label: 'Chstr', value: 'chstr.txt'}]
+                    {label: 'Chstr', value: 'chstr.txt'}],
+                '0':[
+                    {label: 'Sorry', value: 'sorry.txt'},
+                    {label: 'Over', value: 'over.txt'},
+                    {label: 'Blink', value: 'blink.txt'},
+                    {label: '0', value: '0.txt'},
+                    {label: 'Voices', value: 'voices.txt'},
+                    {label: 'Rebel', value: 'rebel.txt'}],
+                'Blood_Sweat_Tears':[
+                    {label: 'Humanize', value: 'humanize.txt'},
+                    {label: 'Blood', value: 'blood_bringing_back_the_heavy.txt'},
+                    {label: 'Tears', value: 'tears.txt'},
+                    {label: 'Guts', value: 'guts.txt'},
+                    {label: 'Glory', value: 'glory.txt'}]
             };
 
             const row = new MessageActionRow()
@@ -129,15 +142,12 @@ client.on('interactionCreate', async interaction => {
                     "Devastator EP": "#F20612",
                     "Hurt": "#34202C",
                     "Anarchy II":"#691312",
-                    "Insert Genre Here":"#7C3F8C"
+                    "Insert Genre Here":"#7C3F8C",
+                    "0":"#1C4AA6",
+                    "Blood Sweat Tears":"#0D0D0D"
                 }
 
-                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II", "Insert Genre Here"]
-
-                /* FOR DEVELOPMENTAL PURPOSES
-                for (const album in albums) {if (interaction.message.content.includes(albums[album])) {request = `True, album is ${albums[album]}`}}
-                interaction.followUp(`Here's your request, ${interaction.member.toString()}:\n\`\`\`${request}\`\`\`\n**THIS IS FOR DEVELOPMENTAL PURPOSES. PLEASE REMOVE THIS IN PUBLICATION.**`)
-                */
+                albums = ["We Are Monsters", "Anarchy", "Devastator EP", "Hurt", "Anarchy II", "Insert Genre Here", "0", "Blood Sweat Tears"]
 
                 song_all_caps = interaction.values[0].split('_').join(' ').replace(".txt", "").toUpperCase()
 
